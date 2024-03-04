@@ -1,0 +1,54 @@
+{
+  "resourceType": "Task",
+  "text": {
+      "status": "generated",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Input task for OUS-0001 , created 2024-02-28T13:45:37+01:00<\/div>"
+    },
+  "status": "completed",
+  "intent": "order",
+  "authoredOn": "2024-02-28T13:45:37+01:00",
+  "lastModified": "2024-02-28T14:00:10+01:00",
+  "requestedPerformer" : [{
+      "reference":{"reference":"OUS-0001"}
+    }],
+  "input": [
+    {
+      "type": {
+          "text": "VCF"
+        },
+      "valueAttachment": {
+          "contentType": "text/tab-separated-values",
+          "url": "file://mutations.vcf"
+        }
+    },
+    {
+      "type": {
+          "text": "Methylation"
+        },
+      "valueAttachment": {
+          "contentType": "text/csv",
+          "url": "file://methylation.csv"
+        }
+    }
+  ],
+  "output": [
+    {
+      "type": {
+          "text": "Survival report"
+        },
+      "valueAttachment": {
+          "contentType": "application/pdf",
+          "url": "file://survival_report.pdf"
+        }
+    },
+    {
+      "type": {
+          "text": "Survival table"
+        },
+      "valueAttachment": {
+          "contentType": "text/csv",
+          "url": "file://survival_table.csv"
+        }
+    }
+  ]
+} 
