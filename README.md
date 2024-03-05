@@ -4,11 +4,42 @@ The [teamplay digital health platform](https://www.siemens-healthineers.com/no/d
 
 For those files, I suggest adding a manifest file that describes what the uploaded files contains, and which analysis should be run on them. This repository is both a description of that suggested manifest format, and an R package for reading and writing them.
 
+## The R package
+
+The R package contains utility functions to generate a new manifest, to mark one as finished and add output files, and to parse a manifest into something easier to work with.
+
+### Installation
+
+Manual:
+
+```         
+git clone https://github.com/dnebdal/teamplayManifest
+R CMD INSTALL teamplayManifest
+```
+
+In R, if you have `devtools` installed:
+
+```         
+devtools::install_github("dnebdal/teamplayManifest")
+```
+
+### Workflow
+The intended flow is something like this:
+
+- User: Create a manifest with `create_task()`
+- Teamplay middleware: Parse the manifest to route it to the right analysis container
+- Analysis code: Parse the manifest with `parse_task()` to get a list of input files
+- Analysis code: Update the manifest with `finish_task()` to add a list of output files
+- Teamplay middleware: Use the updated manifest to show the user a summary of a finished task
+- User: Optionally use the updated manifest to automatically do something with the results
+
+For further reading see the help pages for those functions.
+
 ## HL7 FHIR
 
 To make it easier to integrate into other healthcare systems, this suggested format is compliant with release 5.0 of the [HL7 FHIR](http://hl7.org/fhir/) standard. Specifically, a manifest is a [Task](https://www.hl7.org/fhir/task.html), the files are [Attachments](https://www.hl7.org/fhir/datatypes-definitions.html#Attachment), and the analysis to run is a [Device](https://www.hl7.org/fhir/device.html).
 
-## Format examples
+### Format examples
 
 I suggest three kinds of manifests, for
 
@@ -135,37 +166,6 @@ For the result manifest, I suggest keeping the manifest uploaded with the task, 
 } 
 ```
 
-## The R package
 
-The R package contains utility functions to generate a new manifest, to mark one as finished and add output files, and to parse a manifest into something easier to work with.
-
-### Installation
-
-Manual:
-
-```         
-git clone https://github.com/dnebdal/teamplayManifest
-R CMD INSTALL teamplayManifest
-```
-
-In R, if you have `devtools` installed:
-
-```         
-devtools::install_github("dnebdal/teamplayManifest")
-```
-
-### Workflow
-The intended flow is something like this:
-
-- User: Create a manifest with `create_task()`
-- Teamplay middleware: Parse the manifest to route it to the right analysis container
-- Analysis code: Parse the manifest with `parse_task()` to get a list of input files
-- Analysis code: Update the manifest with `finish_task()` to add a list of output files
-- Teamplay middleware: Use the updated manifest to show the user a summary of a finished task
-- User: Optionally use the updated manifest to automatically do something with the results
-
-For further reading see the help pages for those functions.
-
-
-### Python
+# Python
 I intend to write a Python package with similar functionality, but so far it does not exist.
