@@ -2,8 +2,8 @@
 % Please edit documentation in R/teamplayManifest-package.R
 \docType{package}
 \name{teamplayManifest}
-\alias{teamplayManifest-package}
 \alias{teamplayManifest}
+\alias{teamplayManifest-package}
 \title{teamplayManifest : Create and read manifests for Siemens Teamplay tasks}
 \description{
 When uploading a job to Siemens Teamplay, some metadata is required. In the original design, this was included in the IDCOM images, but for other data types it needs to be explicitly provided as a HL7 FHIR compatible JSON file. This package automates creating and parsing those.
@@ -11,9 +11,11 @@ When uploading a job to Siemens Teamplay, some metadata is required. In the orig
 \section{Manipulating Manifests}{
 
 \itemize{
-\item \code{\link[=create_task]{create_task()}} Generate a manifest with the given input files
-\item \code{\link[=finish_task]{finish_task()}} Update a manifest to add output files
-\item \code{\link[=parse_task]{parse_task()}} Read a manifest file
+\item \code{\link[=createManifest]{createManifest()}} Generate a manifest with the given input files
+\item \code{\link[=readManifest]{readManifest()}} Read a manifest from a file
+\item \code{\link[=finalizeManifest]{finalizeManifest()}} Update a manifest to add output files and mark as done
+\item \code{\link[=packageManifest]{packageManifest()}} Create a packaged file with input/output files and manifest
+\item \code{\link[=manifestToJSON]{manifestToJSON()}} Convert a manifest to a JSON string
 }
 }
 

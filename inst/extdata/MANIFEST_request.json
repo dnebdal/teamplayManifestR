@@ -2,11 +2,14 @@
   "resourceType": "Task",
   "text": {
       "status": "generated",
-      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Input task for OUS-0001 , created 2024-02-28T13:45:37+01:00<\/div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Input task for OUS-0001, created 2024-02-28T13:45:37+01:00<\/div>"
     },
   "status": "requested",
   "intent": "order",
   "authoredOn": "2024-02-28T13:45:37+01:00",
+  "focus":{"reference":"OUS_Patient1"},
+  "for":{"reference":"OUS_Patient1.Start_of_treatment.OUS-0001.1710166715.zip"},
+  "encounter":{"reference":"Start of treatment"},
   "requestedPerformer" : [{
       "reference":{"reference":"OUS-0001"}
     }],
@@ -30,4 +33,4 @@
         }
     }
   ]
-} 
+}

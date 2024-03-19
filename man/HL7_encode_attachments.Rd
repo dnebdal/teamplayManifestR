@@ -7,7 +7,7 @@
 HL7_encode_attachments(file_df)
 }
 \arguments{
-\item{file_df}{A data.frame describingf the input files}
+\item{file_df}{A data.frame describing the input files}
 }
 \value{
 A list that will encode to a JSON fragment

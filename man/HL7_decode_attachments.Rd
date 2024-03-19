@@ -7,7 +7,8 @@
 HL7_decode_attachments(file_list)
 }
 \arguments{
-\item{file_list}{A list describing files, typically $input or $output from \code{\link[=parse_task]{parse_task()}}}
+\item{file_list}{A list describing files, typically $input or $output from
+reading a manifest with \code{\link[jsonlite:fromJSON]{jsonlite::fromJSON()}}.}
 }
 \value{
 A data.frame with three columns describing files
@@ -19,8 +20,8 @@ a data frame describing input or oputput files.
 \details{
 The inverse of \code{\link[=HL7_encode_attachments]{HL7_encode_attachments()}}, this function takes a list
 of the sort returned by jsonlite and simplifies it into a data.frame describing
-files. It's in the same format as that accepted by \code{\link[=create_task]{create_task()}} and
-\code{\link[=finish_task]{finish_task()}}.
+files. The returned data.frame is in the same format as that accepted by
+\code{\link[=createManifest]{createManifest()}} and \code{\link[=finalizeManifest]{finalizeManifest()}}.
 }
 \examples{
 files = data.frame(
@@ -28,7 +29,8 @@ files = data.frame(
   Filename = c("survival_report.pdf", "survival_table.csv"),
   MIME = c("application/pdf", "text/csv")
 )
-manifest = jsonlite::fromJSON(create_task("OUS-0001", files))
-files == HL7_decode_attachments(manifest$input)
+manifest = createManifest("OUS-0001", "Sample1", "T1", files)
+files == HL7_decode_attachments(jsonlite::fromJSON(manifestToJSON(manifest))$input)
+files == readManifest(manifestToJSON(manifest))$input
 
 }

@@ -1,9 +1,11 @@
 #' teamplayManifest : Create and read manifests for Siemens Teamplay tasks
 #'
 #' @section Manipulating Manifests:
-#' * [create_task()] Generate a manifest with the given input files
-#' * [finish_task()] Update a manifest to add output files
-#' * [parse_task()] Read a manifest file
+#' * [createManifest()] Generate a manifest with the given input files
+#' * [readManifest()] Read a manifest from a file
+#' * [finalizeManifest()] Update a manifest to add output files and mark as done
+#' * [packageManifest()] Create a packaged file with input/output files and manifest
+#' * [manifestToJSON()] Convert a manifest to a JSON string
 #'
 #' @section HL7 FHIR Utilities:
 #' * [HL7_dateTime()] Returns a properly formatted date and time

@@ -9,9 +9,9 @@ Description: When uploading a job to Siemens Teamplay, some metadata is required
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports:
-  jsonlite
+  jsonlite,zip
 Roxygen: list(markdown = TRUE)
 Depends: 
     R (>= 2.10)
 LazyData: true
-RoxygenNote: 7.3.1
+RoxygenNote: 7.2.3
