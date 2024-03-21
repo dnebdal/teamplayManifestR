@@ -6,7 +6,7 @@
 \alias{teamplayManifest-package}
 \title{teamplayManifest : Create and read manifests for Siemens Teamplay tasks}
 \description{
-When uploading a job to Siemens Teamplay, some metadata is required. In the original design, this was included in the IDCOM images, but for other data types it needs to be explicitly provided as a HL7 FHIR compatible JSON file. This package automates creating and parsing those.
+When uploading a job to Siemens Teamplay, some metadata is required. In the original design, this was included in the DICOM images, but for other data types it needs to be explicitly provided as a HL7 FHIR compatible JSON file. This package automates creating and parsing those.
 }
 \section{Manipulating Manifests}{
 
