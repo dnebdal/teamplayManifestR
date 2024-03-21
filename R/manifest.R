@@ -44,7 +44,7 @@
 #' @param files A data.frame with one row per input file
 #' @param pretty Pretty print the JSON output (default TRUE)
 #'
-#' @returns A string containing JSON, suitable for writeLines()
+#' @returns A list of class `manifest`
 #'
 #' @examples
 #' input_files = data.frame(
@@ -92,7 +92,8 @@ createManifest <- function(requestedPerformer, sampleID, encounter, files, prett
 #'
 #' @param manifest A filename or JSON string
 #'
-#' @returns A list. The optional fields `input` and `output` are data.frames.
+#' @returns A list of class `manifest`.
+#' The optional fields `input` and `output` are data.frames.
 #'
 #' @examples
 #' task = readManifest(system.file("extdata", "MANIFEST_finished.json", package="teamplayManifest"))

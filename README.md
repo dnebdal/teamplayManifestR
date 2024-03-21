@@ -18,10 +18,12 @@ git clone https://github.com/dnebdal/teamplayManifest
 R CMD INSTALL teamplayManifest
 ```
 
-In R, if you have `devtools` installed:
+In R, if you have `devtools` or `remotes` installed:
 
-```         
+```  
+# Pick one
 devtools::install_github("dnebdal/teamplayManifest")
+remotes::install_github("dnebdal/teamplayManifest")
 ```
 
 ### Workflow

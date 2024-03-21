@@ -18,7 +18,7 @@ createManifest(requestedPerformer, sampleID, encounter, files, pretty = TRUE)
 \item{pretty}{Pretty print the JSON output (default TRUE)}
 }
 \value{
-A string containing JSON, suitable for writeLines()
+A list of class \code{manifest}
 }
 \description{
 \code{createManifest} creates a manifest from an algorithm ID, sample info, and a data.frame of input files

@@ -10,7 +10,8 @@ readManifest(manifest)
 \item{manifest}{A filename or JSON string}
 }
 \value{
-A list. The optional fields \code{input} and \code{output} are data.frames.
+A list of class \code{manifest}.
+The optional fields \code{input} and \code{output} are data.frames.
 }
 \description{
 \code{readManifest} parses a JSON manifest into a manifest object
