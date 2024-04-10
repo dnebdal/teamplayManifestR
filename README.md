@@ -1,5 +1,5 @@
 # teamplayManifestR
-Generate, parse, and package manifests describing input and results from Siemens Teamplay. For a description of the format and why it exists, see [https://github.com/dnebdal/teamplayManifest-common](teamplayManifest-common). There is also a corresponding Python project, [teamPlay-py](https://github.com/dnebdal/teamplayManifest-py).
+Generate, parse, and package manifests describing input and results from Siemens Teamplay. For a description of the format and why it exists, see [teamplayManifest-common](https://github.com/dnebdal/teamplayManifest-common). There is also a corresponding Python project, [teamPlay-py](https://github.com/dnebdal/teamplayManifest-py).
 
 ### Installation
 
