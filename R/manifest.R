@@ -71,7 +71,7 @@ createManifest <- function(requestedPerformer, sampleID, encounter, files, prett
     sampleID =   sampleID,
     encounter =  encounter,
     authoredOn = created,
-    requestedPerformer = data.frame(reference=requestedPerformer)
+    requestedPerformer = requestedPerformer
   )
 
   manifest$input = files
@@ -263,9 +263,10 @@ manifestToJSON <- function(x, pretty=FALSE, ...) {
       status = "generated",
       div = sprintf(
         "<div xmlns='http://www.w3.org/1999/xhtml'>%s task for %s , created %s</div>",
-        status, x$requestedPerformer[1], x$authoredOn
+        status, x$requestedPerformer, x$authoredOn
       ))),
     status =     jsonlite::unbox(x$status),
+    requestedPerformer =  list(list(reference = jsonlite::unbox(data.frame(reference = x$requestedPerformer)))),
     intent =     jsonlite::unbox("order"),
     `for` =      jsonlite::unbox(data.frame(reference=x$sampleID)),
     encounter =  jsonlite::unbox(data.frame(reference=x$encounter)),
