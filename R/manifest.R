@@ -268,13 +268,13 @@ manifestToJSON <- function(x, pretty=FALSE, ...) {
     status =     jsonlite::unbox(x$status),
     requestedPerformer =  list(list(reference = jsonlite::unbox(data.frame(reference = x$requestedPerformer)))),
     intent =     jsonlite::unbox("order"),
-    `for` =      jsonlite::unbox(data.frame(reference=x$sampleID)),
+    focus =      jsonlite::unbox(data.frame(reference=x$sampleID)),
     encounter =  jsonlite::unbox(data.frame(reference=x$encounter)),
     authoredOn = jsonlite::unbox(x$authoredOn)
   )
 
   if("zipfile" %in% names(x)) {
-    manifestNew$focus = jsonlite::unbox(data.frame(reference=x$zipfile))
+    manifestNew$`for` = jsonlite::unbox(data.frame(reference=x$zipfile))
   }
 
   if("input" %in% names(x)) {
